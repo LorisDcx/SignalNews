@@ -1,0 +1,333 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignalsNews – News → Stock Signals</title>
+  <meta name="description" content="Turn financial news into simple stock signals (US + Europe). Join the waitlist for early access." />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { primary: '#6366f1', secondary: '#10b981' } } }
+    }
+  </script>
+  <!-- Social -->
+  <meta property="og:title" content="SignalsNews — News → Stock Signals" />
+  <meta property="og:description" content="We detect impactful news and show a simple 🔺/🔻 signal with confidence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/ffffff/aaa&text=SignalsNews" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Icons (single include) -->
+  <script src="https://unpkg.com/feather-icons" defer></script>
+  <style>
+    .gradient { background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 45%, #f5f3ff 100%); }
+  </style>
+</head>
+<body class="bg-white font-sans antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="#" class="flex-shrink-0 flex items-center">
+            <div class="h-8 w-8 bg-gradient-to-br from-primary to-purple-500 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-lg">S</span>
+            </div>
+            <span class="ml-2 text-xl font-semibold text-gray-900">SignalsNews</span>
+          </a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">How it works</a>
+            <a href="#pricing" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+            <a href="#faq" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">FAQ</a>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-nav" class="md:hidden hidden border-t">
+        <a href="#how-it-works" class="block px-4 py-3">How it works</a>
+        <a href="#pricing" class="block px-4 py-3">Pricing</a>
+        <a href="#faq" class="block px-4 py-3">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative gradient py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="lg:pr-12">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            News → Stock Signals: instantly see 🔺/🔻 moves
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+            We automatically detect impactful news (earnings, M&A, lawsuits) and show a simple signal with confidence level. Near real‑time for US & Europe.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-gray-700">
+            <li class="flex items-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white mr-3"><i data-feather="check" class="w-4 h-4"></i></span> Near real‑time news analysis (US & EU)</li>
+            <li class="flex items-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white mr-3"><i data-feather="check" class="w-4 h-4"></i></span> Sentiment + impact scoring with confidence</li>
+            <li class="flex items-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white mr-3"><i data-feather="check" class="w-4 h-4"></i></span> Simple alternative to expensive terminals</li>
+          </ul>
+
+          <!-- Netlify Forms: working capture -->
+          <form name="waitlist" method="POST" data-netlify="true" action="/thanks.html" netlify-honeypot="bot-field"
+                class="mt-8 flex flex-col sm:flex-row gap-3 bg-white/70 p-2 rounded-xl shadow">
+            <input type="hidden" name="form-name" value="waitlist" />
+            <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+            <input type="email" name="email" required autocomplete="email"
+                   class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                   placeholder="Enter your email" />
+            <button type="submit" class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors shadow-lg">
+              Join Waitlist
+            </button>
+          </form>
+          <label class="mt-3 flex items-start gap-2 text-sm text-gray-500">
+            <input type="checkbox" name="consent" required class="mt-1">
+            I agree to receive emails about launches and updates. Not investment advice.
+          </label>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="font-semibold text-gray-900">Signals Feed (example)</h3>
+              <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <i data-feather="activity" class="w-3 h-3 mr-1"></i> Live
+              </span>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div class="flex items-center space-x-3"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="font-medium text-gray-900">AAPL</span></div>
+                <div class="text-right">
+                  <div class="flex items-center space-x-2"><span class="text-green-600 font-semibold">🔺 Bullish</span><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">High</span></div>
+                  <p class="text-sm text-gray-600 mt-1">Earnings beat expectations.</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div class="flex items-center space-x-3"><span class="w-2 h-2 bg-red-500 rounded-full"></span><span class="font-medium text-gray-900">TSLA</span></div>
+                <div class="text-right">
+                  <div class="flex items-center space-x-2"><span class="text-red-600 font-semibold">🔻 Bearish</span><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Medium</span></div>
+                  <p class="text-sm text-gray-600 mt-1">Regulatory concerns.</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div class="flex items-center space-x-3"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="font-medium text-gray-900">MSFT</span></div>
+                <div class="text-right">
+                  <div class="flex items-center space-x-2"><span class="text-blue-600 font-semibold">⚪ Neutral</span><span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">Low</span></div>
+                  <p class="text-sm text-gray-600 mt-1">Minor partnership.</p>
+                </div>
+              </div>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">Demo data for illustration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section id="how-it-works" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900">How SignalsNews Works</h2>
+        <p class="mt-4 text-lg text-gray-600">Three simple steps from news to actionable signals</p>
+      </div>
+      <div class="mt-16 grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="mx-auto w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center"><i data-feather="download" class="w-8 h-8 text-white"></i></div>
+          <h3 class="mt-6 text-xl font-semibold text-gray-900">1. Ingest News</h3>
+          <p class="mt-3 text-gray-600">We monitor trusted financial sources (Reuters, MarketWatch, Yahoo Finance) every few minutes.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center"><i data-feather="cpu" class="w-8 h-8 text-white"></i></div>
+          <h3 class="mt-6 text-xl font-semibold text-gray-900">2. Analyze Impact</h3>
+          <p class="mt-3 text-gray-600">AI models assess sentiment, map tickers, and classify event type (earnings, M&A, litigation, broker moves…).</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center"><i data-feather="activity" class="w-8 h-8 text-white"></i></div>
+          <h3 class="mt-6 text-xl font-semibold text-gray-900">3. Generate Signal</h3>
+          <p class="mt-3 text-gray-600">Clear 🔺/🔻 signals with confidence, in your dashboard and alerts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Simple, Transparent Pricing</h2>
+        <p class="mt-4 text-lg text-gray-600">Early‑bird prelaunch pricing — lock these rates forever</p>
+      </div>
+      <div class="mt-16 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-gray-900">Starter</h3>
+            <div class="mt-4"><span class="text-4xl font-bold text-gray-900">€9</span><span class="text-gray-600">/month</span></div>
+            <p class="mt-2 text-gray-600">Perfect for individual investors</p>
+          </div>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>US Markets Coverage</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>~15‑minute delay</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>Web Dashboard</span></li>
+            <li class="flex items-center text-gray-400"><i data-feather="x" class="w-5 h-5 mr-3"></i><span>Realtime alerts</span></li>
+          </ul>
+          <button onclick="document.querySelector('form[name=waitlist]')?.scrollIntoView({behavior:'smooth'})"
+                  class="mt-8 w-full bg-gray-100 text-gray-900 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
+            Join Waitlist
+          </button>
+          <p class="mt-2 text-xs text-gray-500 text-center">Not investment advice.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl border-2 border-primary p-8 relative">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <span class="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+          </div>
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-gray-900">Professional</h3>
+            <div class="mt-4"><span class="text-4xl font-bold text-gray-900">€29</span><span class="text-gray-600">/month</span></div>
+            <p class="mt-2 text-gray-600">For active traders and professionals</p>
+          </div>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>US + European Markets</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>Alerts as fast as 1 minute</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>Web + Mobile Dashboard</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>Email & SMS Alerts</span></li>
+          </ul>
+          <button onclick="document.querySelector('form[name=waitlist]')?.scrollIntoView({behavior:'smooth'})"
+                  class="mt-8 w-full bg-primary text-white font-medium py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors shadow-lg">
+            Join Waitlist
+          </button>
+          <p class="mt-2 text-xs text-gray-200/80 text-center">Not investment advice.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-gray-900">Teams</h3>
+            <div class="mt-4"><span class="text-4xl font-bold text-gray-900">€99</span><span class="text-gray-600">/month</span></div>
+            <p class="mt-2 text-gray-600">For investment teams and firms</p>
+          </div>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>All Pro features</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>5 user seats included</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>API Access</span></li>
+            <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i><span>Priority Support</span></li>
+          </ul>
+          <button onclick="document.querySelector('form[name=waitlist]')?.scrollIntoView({behavior:'smooth'})"
+                  class="mt-8 w-full bg-gray-100 text-gray-900 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
+            Join Waitlist
+          </button>
+          <p class="mt-2 text-xs text-gray-500 text-center">Not investment advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+        <p class="mt-4 text-lg text-gray-600">Get answers to common questions about SignalsNews</p>
+      </div>
+      <div class="mt-16 space-y-8">
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-900">Is it near real‑time?</h3>
+          <p class="mt-2 text-gray-600">Starter has ~15‑minute delay; Pro targets alerts as fast as 1 minute. Latency improves as we grow.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-900">How reliable are the signals?</h3>
+          <p class="mt-2 text-gray-600">We use FinBERT‑style sentiment + impact heuristics and show a confidence level (Low/Medium/High). We’ll publish historical accuracy in V1.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-900">Which markets do you cover?</h3>
+          <p class="mt-2 text-gray-600">Starter: US. Pro: US + Europe (CAC40, DAX, FTSE100). More regions based on demand.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-900">Is this investment advice?</h3>
+          <p class="mt-2 text-gray-600">No. SignalsNews provides information and tools only. Always do your own research.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-900">Can I try before I buy?</h3>
+          <p class="mt-2 text-gray-600">Yes — join the waitlist for early access to our free trial at launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="md:col-span-2">
+          <div class="flex items-center">
+            <div class="h-8 w-8 bg-gradient-to-br from-primary to-purple-500 rounded-lg flex items-center justify-center"><span class="text-white font-bold text-lg">S</span></div>
+            <span class="ml-2 text-xl font-semibold">SignalsNews</span>
+          </div>
+          <p class="mt-4 text-gray-400 max-w-md">Transform financial news into actionable trading signals. Simple, clear, and affordable market intelligence.</p>
+          <p class="mt-4 text-sm text-gray-500">Not investment advice.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Product</h4>
+          <ul class="space-y-2">
+            <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors">How it works</a></li>
+            <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+        <p>© 2025 SignalsNews. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.feather) feather.replace();
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('mobile-nav');
+      btn?.addEventListener('click', () => nav.classList.toggle('hidden'));
+    });
+  </script>
+</body>
+</html>
+
+
+<!-- thanks.html (place this as a separate file at site root) -->
+<!--
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thanks — SignalsNews</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen grid place-items-center bg-gray-50 text-slate-800">
+  <main class="bg-white p-10 rounded-2xl shadow border text-center max-w-lg">
+    <div class="mx-auto w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-emerald-600"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+    <h1 class="text-2xl font-bold mt-4">Thanks! You’re on the waitlist.</h1>
+    <p class="mt-2 text-slate-600">We’ll email you as soon as we launch. In the meantime, follow updates and share with friends.</p>
+    <a href="/" class="mt-6 inline-block px-5 py-3 rounded-lg bg-primary text-white">← Back to homepage</a>
+  </main>
+</body>
+</html>
+-->
